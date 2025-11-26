@@ -1,0 +1,21 @@
+{
+  "name": "pokeTwo",
+  "version": "0.0.1",
+  "description": "A simple bot to grind pokétwo bot on discord without effort.",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "watch": "tsx watch src/index.ts",
+    "check": "tsc --noEmit",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "keywords": [],
+  "author": "Hydradevx",
+  "license": "MIT",
+  "packageManager": "pnpm@10.23.0",
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}
