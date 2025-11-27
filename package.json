@@ -1,5 +1,5 @@
 {
-  "name": "pokeTwo",
+  "name": "Dank Memer",
   "version": "0.0.1",
   "description": "A simple bot to grind pokétwo bot on discord without effort.",
   "scripts": {
@@ -17,5 +17,9 @@
     "@types/node": "^24.10.1",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "discord.js-selfbot-v13": "^3.7.1"
   }
 }

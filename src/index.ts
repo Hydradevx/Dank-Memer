@@ -1,1 +1,3 @@
-console.log("Hello World!");
+import { token, client } from "./global/vars";
+
+client.login(token);
