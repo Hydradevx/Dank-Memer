@@ -1,24 +1,31 @@
 import fs from "fs";
 import path from "path";
+import chalk from "chalk";
 import { fileURLToPath } from "url";
-import chalk from "chalk"
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+let rootDir = __dirname;
+while (!fs.existsSync(path.join(rootDir, "package.json"))) {
+  rootDir = path.dirname(rootDir);
+
+  if (rootDir === "/") break;
+}
+
+const configPath = path.join(rootDir, "config.json");
 
 type Config = {
   token: string;
   prefix: string;
 };
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
-const configPath = path.join(__dirname, "./config.json");
 if (!fs.existsSync(configPath)) {
-  console.log(
-    `Please type ${chalk.red("npm run config")} to set up the config!`,
-  );
+  console.log(`Please type ${chalk.red("npm run config")} to set up the config!`);
   process.exit();
 }
-let config: Config = JSON.parse(fs.readFileSync(configPath, "utf-8"));
 
+let config: Config = JSON.parse(fs.readFileSync(configPath, "utf-8"));
 
 fs.watch(configPath, (eventType) => {
   if (eventType === "change") {

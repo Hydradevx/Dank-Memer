@@ -1,7 +1,8 @@
 {
   "name": "Dank Memer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple bot to grind pokétwo bot on discord without effort.",
+  "type": "module",
   "scripts": {
     "dev": "tsx src/index.ts",
     "watch": "tsx watch src/index.ts",
@@ -20,6 +21,7 @@
   },
   "dependencies": {
     "chalk": "^5.6.2",
+    "debug": "^4.4.3",
     "discord.js-selfbot-v13": "^3.7.1"
   }
 }
